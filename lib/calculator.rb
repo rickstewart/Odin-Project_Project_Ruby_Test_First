@@ -33,7 +33,7 @@ def power(base, exp)
   return result
 end
 
-# computes the factorial of a given number (n!)
+# computes the factorial of a given positive integer (n!)
 def factorial(number)
   i = 2
   result = 2
