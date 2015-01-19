@@ -41,8 +41,8 @@ def factorial(number)
     return 1
   else
     while (i < number) do
-      result = result * (i + 1)
       i = i + 1
+      result = result * i
     end
     return result
   end
