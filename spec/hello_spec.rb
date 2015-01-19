@@ -119,7 +119,7 @@ require "spec_helper"
 
 describe "the hello function" do
   it "says hello" do
-    #hello.should == "Hello!"
+    #hello.should == "Hello!"     ( is deprecated )
     expect(hello).to eq("Hello!")
   end
 end

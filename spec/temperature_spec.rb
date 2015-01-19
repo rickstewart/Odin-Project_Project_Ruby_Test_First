@@ -15,26 +15,33 @@
 #    1.0 / 2.0 => 0.5
 #
 
-require "temperature"
+require "rspec"
+require_relative "../lib/temperature"
+require "spec_helper"
+
 
 describe "temperature conversion functions" do
 
   describe "#ftoc" do
 
     it "converts freezing temperature" do
-      ftoc(32).should == 0
+      #ftoc(32).should == 0     ( is deprecated )
+      expect(ftoc(32)).to eq(0)
     end
 
     it "converts boiling temperature" do
-      ftoc(212).should == 100
+      #ftoc(212).should == 100
+      expect(ftoc(212)).to eq(100)
     end
 
     it "converts body temperature" do
-      ftoc(98.6).should == 37
+      #ftoc(98.6).should == 37
+      expect(ftoc(98.6)).to eq(37)
     end
 
     it "converts arbitrary temperature" do
-      ftoc(68).should == 20
+      #ftoc(68).should == 20
+      expect(ftoc(68)).to eq(20)
     end
 
   end
@@ -42,26 +49,28 @@ describe "temperature conversion functions" do
   describe "#ctof" do
 
     it "converts freezing temperature" do
-      ctof(0).should == 32
+      #ctof(0).should == 32
+      expect(ctof(0)).to eq(32)
     end
 
     it "converts boiling temperature" do
-      ctof(100).should == 212
+      #ctof(100).should == 212
+      expect(ctof(100)).to eq(212)
     end
 
     it "converts arbitrary temperature" do
-      ctof(20).should == 68
+      #ctof(20).should == 68
+      expect(ctof(20)).to eq(68)
     end
 
     it "converts body temperature" do
-      ctof(37).should be_within(0.1).of(98.6)
+      #ctof(37).should be_within(0.1).of(98.6)
+      expect(ctof(37)).to eq(98.6)
       # Why do we need to use be_within?
       # See http://www.ruby-forum.com/topic/169330
       # and http://en.wikipedia.org/wiki/IEEE_754-2008
       # and http://en.wikipedia.org/wiki/Double_precision_floating-point_format
       # Also, try "puts 0.5 - 0.4 - 0.1" -- pretty crazy, right?
     end
-
   end
-
 end
