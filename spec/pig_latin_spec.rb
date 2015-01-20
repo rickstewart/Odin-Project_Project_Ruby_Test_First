@@ -28,6 +28,11 @@ describe "#translate" do
     s.should == "appleay"
   end
 
+  it "translates a word beginning with a vowel" do
+    s = translate("orange")
+    s.should == "orangeay"
+  end
+
   it "translates a word beginning with a consonant" do
     s = translate("banana")
     s.should == "ananabay"
