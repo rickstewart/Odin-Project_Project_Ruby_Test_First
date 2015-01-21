@@ -6,7 +6,9 @@
 # * loops
 #
 
-require "silly_blocks"
+require "rspec"
+require_relative "../lib/silly_blocks"
+require "spec_helper"
 
 describe "some silly block functions" do
 
