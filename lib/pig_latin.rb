@@ -11,8 +11,8 @@ def translate(users_phrase)
       word = word + 'ay'
     else
       while(word.start_with?(*consonants)) do
-        #found_consonants = found_consonants + letters_in_word.shift
         temp_hold_consonant = letters_in_word.shift
+        cap_flag = (temp_hold_consonant == temp_hold_consonant.upcase) ? true : false
         if(temp_hold_consonant == 'q' || temp_hold_consonant == 'Q')
           temp2_hold_consonant = letters_in_word.shift
           if(temp2_hold_consonant == 'u' || temp2_hold_consonant == 'U')
@@ -23,9 +23,14 @@ def translate(users_phrase)
           found_consonants = found_consonants + temp_hold_consonant
         end
         word = letters_in_word.join('')
+        word = word.downcase
+        if(cap_flag)
+          word = word.capitalize
+        end
       end
       word = letters_in_word.join('')
       word = word << found_consonants + 'ay'
+      found_consonants = ''
     end
     answer.push(word)
   end
