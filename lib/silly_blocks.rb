@@ -1,12 +1,13 @@
 
 # reverses each word in the string returned by the default block
-def reverser(user_string)
-  array_form_of_input = user_string.split.map{|word| word.reverse}
-  return array_form_of_input.join(' ')
+def reverser
+  result = ''
+  caught_default_block = yield if block_given?
+  caught_default_block.split(' ').map!{|word| word.reverse}.join(' ')
 end
 
-puts reverser("Hello! You")
-
-puts result = reverser do
-  "hello"
+def adder(operand=1)
+  result = ''
+  caught_default_block = yield if block_given?
+  caught_default_block + operand
 end
