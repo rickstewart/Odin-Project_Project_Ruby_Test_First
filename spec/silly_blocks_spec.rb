@@ -17,28 +17,34 @@ describe "some silly block functions" do
       result = reverser do
         "hello"
       end
-      result.should == "olleh"
+      expect(result).to eq("olleh")
+      #result.should == "olleh"        ( is deprecated )
     end
 
     it "reverses each word in the string returned by the default block" do
       result = reverser do
         "hello dolly"
       end
-      result.should == "olleh yllod"
+      expect(result).to eq("olleh yllod")
+      #result.should == "olleh yllod"        ( is deprecated )
     end
   end
 
   describe "adder" do
     it "adds one to the value returned by the default block" do
-      adder do
+      test = adder do
         5
-      end.should == 6
+        end
+      #end.should == 6        ( is deprecated )
+      expect(test).to eq(6)
     end
 
     it "adds 3 to the value returned by the default block" do
-      adder(3) do
+      test = adder(3) do
         5
-      end.should == 8
+      end
+      #end.should == 8       ( is deprecated )
+      expect(test).to eq(8)
     end
   end
 
@@ -48,7 +54,7 @@ describe "some silly block functions" do
       repeater do
         block_was_executed = true
       end
-      block_was_executed.should == true
+      block_was_executed.should == true      #( is deprecated )
     end
 
     it "executes the default block 3 times" do
@@ -56,7 +62,7 @@ describe "some silly block functions" do
       repeater(3) do
         n += 1
       end
-      n.should == 3
+      n.should == 3      #( is deprecated )
     end
 
     it "executes the default block 10 times" do
@@ -64,7 +70,7 @@ describe "some silly block functions" do
       repeater(10) do
         n += 1
       end
-      n.should == 10
+      n.should == 10      #( is deprecated )
     end
 
   end

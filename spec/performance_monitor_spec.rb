@@ -8,7 +8,9 @@
 #
 # This is (a stripped down version of) an actual useful concept: a function that runs a block of code and then tells you how long it took to run.
 
-require "performance_monitor"
+require "rspec"
+require_relative "../lib/performance_monitor"
+require "spec_helper"
 
 require "time"  # loads up the Time.parse method -- do NOT create time.rb!
 
