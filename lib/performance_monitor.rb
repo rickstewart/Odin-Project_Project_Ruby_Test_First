@@ -6,12 +6,12 @@
 # http://stackoverflow.com/questions/14326000/what-exactly-does-time-stubnow-fake-time-do
 
 def measure(number_of_times=1)
-  elapsed_time = 0
+  total_time = 0
   start = Time.now
   number_of_times.times do
-  yield if block_given?
-  finish = Time.now
-  elapsed_time = elapsed_time + (finish - start)
+    yield if block_given?
   end
-  elapsed_time
+  finish = Time.now
+  total_time += (finish - start)
+  total_time/number_of_times
 end
