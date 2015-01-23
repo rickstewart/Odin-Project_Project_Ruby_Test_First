@@ -12,7 +12,9 @@
 # Book Titles in English obey some strange capitalization rules. For example, "and" is lowercase in "War and Peace". This test attempts to make sense of some of those rules.
 #
 
-require 'book'
+require "rspec"
+require_relative "../lib/book"
+require "spec_helper"
 
 describe Book do
 

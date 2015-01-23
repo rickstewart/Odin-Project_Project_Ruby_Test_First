@@ -7,7 +7,9 @@
 #
 # # Timer
 
-require 'timer'
+require "rspec"
+require_relative "../lib/timer"
+require "spec_helper"
 
 describe "Timer" do
   before(:each) do

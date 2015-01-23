@@ -88,14 +88,18 @@
 #
 #
 
-require "friend"
+require "rspec"
+require_relative "../lib/friend"
+require "spec_helper"
 
 describe Friend do
   it "says hello" do
-    Friend.new.greeting.should == "Hello!"
+    # Friend.new.greeting.should == "Hello!"     ( is deprecated )
+    expect(Friend.new.greeting).to eq("Hello!")
   end
 
   it "says hello to someone" do
-    Friend.new.greeting("Bob").should == "Hello, Bob!"
+    #Friend.new.greeting("Bob").should == "Hello, Bob!"     ( is deprecated )
+    expect(Friend.new.greeting("Bob")).to eq("Hello, Bob!")
   end
 end
