@@ -15,57 +15,63 @@
 # The temperature object's constructor should accept an *options hash* which contains either a `:celcius` entry or a `:fahrenheit` entry.
 #
 #
-#
 
-require "temperature"
+require "rspec"
+require_relative "../lib/temperature_object"
+require "spec_helper"
 
 describe Temperature do
 
   describe "can be constructed with an options hash" do
     describe "in degrees fahrenheit" do
       it "at 50 degrees" do
-        Temperature.new(:f => 50).in_fahrenheit.should == 50
+        #Temperature.new(:f => 50).in_fahrenheit.should == 50     ( is deprecated )
+        expect(Temperature.new(:f => 50).in_fahrenheit).to eq(50)
       end
 
       describe "and correctly convert to celsius" do
         it "at freezing" do
-          Temperature.new(:f => 32).in_celsius.should == 0
+          #Temperature.new(:f => 32).in_celsius.should == 0     ( is deprecated )
+          expect(Temperature.new(:f => 32).in_celsius).to eq(0)
         end
 
         it "at boiling" do
-          Temperature.new(:f => 212).in_celsius.should == 100
+          #Temperature.new(:f => 212).in_celsius.should == 100     ( is deprecated )
+          expect(Temperature.new(:f => 212).in_celsius).to eq(100)
         end
 
         it "at body temperature" do
-          Temperature.new(:f => 98.6).in_celsius.should == 37
+          #Temperature.new(:f => 98.6).in_celsius.should == 37     ( is deprecated )
+          expect(Temperature.new(:f => 98.6).in_celsius).to eq(37)
         end
 
         it "at an arbitrary temperature" do
-          Temperature.new(:f => 68).in_celsius.should == 20
+          #Temperature.new(:f => 68).in_celsius.should == 20     ( is deprecated )
+          expect(Temperature.new(:f => 68).in_celsius).to eq(20)
         end
       end
     end
 
     describe "in degrees celsius" do
       it "at 50 degrees" do
-        Temperature.new(:c => 50).in_celsius.should == 50
+        #Temperature.new(:c => 50).in_celsius.should == 50     ( is deprecated )
+        expect(Temperature.new(:c => 50).in_celsius).to eq(50)
       end
 
       describe "and correctly convert to fahrenheit" do
         it "at freezing" do
-          Temperature.new(:c => 0).in_fahrenheit.should == 32
+          #Temperature.new(:c => 0).in_fahrenheit.should == 32     ( is deprecated )
+          expect(Temperature.new(:c => 0).in_fahrenheit).to eq(32)
         end
 
         it "at boiling" do
-          Temperature.new(:c => 100).in_fahrenheit.should == 212
+          #Temperature.new(:c => 100).in_fahrenheit.should == 212     ( is deprecated )
+          expect(Temperature.new(:c => 100).in_fahrenheit).to eq(212)
         end
 
         it "at body temperature" do
-          Temperature.new(:c => 37).in_fahrenheit.should be_within(0.1).of(98.6)
-          # Why do we need to use be_within here?
-          # See http://www.ruby-forum.com/topic/169330
-          # and http://groups.google.com/group/rspec/browse_thread/thread/f3ebbe3c313202bb
-          # Also, try "puts 0.5 - 0.4 - 0.1" -- pretty crazy, right?
+          #Temperature.new(:c => 37).in_fahrenheit.should be_within(0.1).of(98.6)     ( is deprecated )
+          expect(Temperature.new(:c => 37).in_fahrenheit).to be_within(0.1).of(98.6)
         end
       end
     end
