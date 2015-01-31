@@ -2,4 +2,4 @@ The Odin Project - Assignment: Project Ruby - http://www.theodinproject.com/web-
 
 Assignments based on TestFirst.org learn_ruby Labs - http://testfirst.org/learn_ruby
 
-Student: Rick Stewart Date: Jan 18 2015
+Student: Rick Stewart Date: Jan 31 2015
